@@ -388,14 +388,14 @@ xxxxxxx
 	\end{lstlisting}
 \end{frame}
 
-\section{Fuktionen}
+\section{Methoden}
 \begin{frame}[fragile]
-	\frametitle{Was sind Funktionen}
+	\frametitle{Was sind Methoden}
 	\begin{itemize}
 		\item Wiederkehrende Aufgaben kapseln
 		\item Logische Trennung von Funktionalit\"at
 		\item Code wird \"ubersichtlicher
-		\item Funktionen haben sogenannte Parameter / R\"uckgabewerte
+		\item Methoden haben sogenannte Parameter und R\"uckgabewerte
 	\end{itemize}
 \end{frame}
 
@@ -406,14 +406,14 @@ xxxxxxx
 	
 \begin{lstlisting}[language=java]
 
-// Funktion definieren
-void sageHallo(){
+// Methode definieren
+void sageHallo() {
 	System.out.println("Hallo");	
 }
 
-// Das Wort "void" bedeutet, die Methode hat keinen Rückgabewert
+// Das Wort "void" bedeutet, dass die Methode keinen Rückgabewert hat
 
-// Funktion aufrufen
+// Methode aufrufen
 sageHallo();
 
 	\end{lstlisting}
@@ -421,10 +421,10 @@ sageHallo();
 
 \subsection{Parameter}
 \begin{frame}[fragile]
-	\frametitle{Fuktionen Parameter \"ubergeben}
+	\frametitle{Methoden Parameter \"ubergeben}
 	\begin{itemize}
 		\item Wiederkehrende Aufgaben unterscheiden sich
-		\item Aufruf mit Parameter: \lstinline[language=java]{meineFunktion(eineVariable);}
+		\item Aufruf mit Parameter: \lstinline[language=java]{meineMethode(eineVariable);}
 	\end{itemize}
 \end{frame}
 
@@ -433,12 +433,12 @@ sageHallo();
 		
 	\begin{lstlisting}[language=java]
 
-// Funktion definieren
-void sageHallo(String name){
+// Methode definieren
+void sageHallo(String name) {
 	System.out.println("Hallo " + name);	
 }
 
-// Funktion aufrufen
+// Methode aufrufen
 sageHallo("max");
 
 	\end{lstlisting}
@@ -446,9 +446,9 @@ sageHallo("max");
 
 \subsection{R\"uckgabe}
 \begin{frame}[fragile]
-	\frametitle{Fuktionen mit R\"uckgabe}
+	\frametitle{Methoden mit R\"uckgabe}
 	\begin{itemize}
-		\item Eine Funktion kann ein Ergebnis zur\"uckliefern
+		\item Eine Methode kann ein Ergebnis zur\"uckliefern
 		\item Aufruf mit R\"uckgabe: \lstinline[language=java]{int uhr = holeUhrzeit();}
 	\end{itemize}
 \end{frame}
@@ -457,12 +457,12 @@ sageHallo("max");
 	\frametitle{Ein Beispiel}
 	\begin{lstlisting}[language=java]
 
-// Fuktion definieren
-int addiere(int x, int y){
+// Methode definieren
+int addiere(int x, int y) {
 	return x + y;	
 }
 
-// Fuktion aufrufen
+// Methode aufrufen
 int i = addiere(1, 2);
 
 System.out.println(i);
@@ -475,8 +475,8 @@ System.out.println(i);
 	\frametitle{\arabic{aufgabe}. Aufgabe}
 		
 	\begin{lstlisting}[language=java]
-// Schreibe eine Funktion, die je nach Geschlecht "Hallo, Herr/ Frau Name" und den Namen ausgibt.
-public void sageHallo(String name, boolean istFrau) {
+// Schreibe eine Methode, die je nach Geschlecht "Hallo, Herr / Frau " und den Namen ausgibt.
+void sageHallo(String name, boolean istFrau) {
 	
 }
 	\end{lstlisting}
@@ -486,7 +486,7 @@ public void sageHallo(String name, boolean istFrau) {
 \begin{frame}[fragile]
 	\frametitle{\arabic{aufgabe}. Aufgabe}
 	\begin{lstlisting}[language=java]
-// Schreibe eine Funktion die das Quadrat einer Zahl zurückgibt.
+// Schreibe eine Methode, die das Quadrat einer Zahl zurückgibt.
 int pow(int x, int y) {
 	return 0;
 }
