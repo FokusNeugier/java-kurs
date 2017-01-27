@@ -1,0 +1,495 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pdfminorversion=4
+
+\newcounter{aufgabe}
+
+\documentclass{beamer}
+
+\mode<presentation> {
+	\usepackage[utf8]{inputenc}
+	\usetheme{Hannover}
+	\usecolortheme{dolphin}
+}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage{lmodern}
+
+\usepackage{color}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\usepackage{listings}
+\lstset{language=Java,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  commentstyle=\color{pgreen},
+  keywordstyle=\color{pblue},
+  stringstyle=\color{pred},
+  basicstyle=\ttfamily,
+  moredelim=[il][\textcolor{pgrey}]{$$},
+  moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+}
+
+\lstset{literate=%
+    {Ö}{{\"O}}1
+    {Ä}{{\"A}}1
+    {Ü}{{\"U}}1
+    {ß}{{\ss}}1
+    {ü}{{\"u}}1
+    {ä}{{\"a}}1
+    {ö}{{\"o}}1
+    {~}{{\textasciitilde}}1
+}
+
+\title[Einführung Java]{Einf\"uhrung in die Programiersprache Java}
+
+\author{FokusNeugier}
+\institute[HSRM] 
+{
+Hochschule Rheinmain\\www.fokusneugier.de\\
+\medskip
+\textit{Lizenz: CC BY-NC-SA 3.0} 
+
+}
+\date{\today} 
+
+% --- begin document  --- %
+
+\begin{document}
+
+\begin{frame}
+	\titlepage 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Overview}
+	\setcounter{tocdepth}{1}
+	\tableofcontents
+\end{frame}
+
+\begin{frame}
+	\frametitle{Diese Pr\"asentation}
+	Diese Pr\"asentation (Quellcode und PDF) kann heruntergeladen werden\\
+	\url{https://github.com/FokusNeugier/java-kurs}
+\end{frame}
+
+\section{Einführung} 
+
+\subsection{Überblick} 
+
+\begin{frame}
+	\frametitle{Warum Java?}
+	\begin{itemize}
+		\item Einfach zu lernen
+		\item Wenig Aufwand für GUIs
+		\item Android Apps, Desktop Apps, Mindstorms etc
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Fangen wir an! - So sieht Java aus:}
+	\begin{lstlisting}[language=java]
+class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
+}
+	\end{lstlisting}
+\end{frame}
+
+\subsection{Variablen} 
+
+\begin{frame}
+	\frametitle{Was sind Variablen?}
+	\begin{itemize}
+		\item Speicher für verschiedene Daten (Zahlen, Zeichen, Texte...)
+		\item Ein Teil der Datentypen: int, long, double, char, String
+		\item Werden beschrieben durch: typ name = wert; Bsp: \lstinline[language=java]{int i = 4;}
+		\item Programme können mit den Namen der Variablen arbeiten
+		\item Können mit Oparatoren verknüpft werden
+		\item Werden auch in der Mathematik angewendet $$Beispiel: \;\;x^2 + 2 = 4 \;\;\;\;\; x * 2 = x + x $$
+	\end{itemize}
+\end{frame}
+
+\subsection{Operatoren}
+
+\begin{frame}[fragile]
+	\frametitle{Operationen}
+	\begin{lstlisting}[language=java]
+int x = 1;
+int y = 2;
+int z = 3;
+
+x = y + x; // Addition
+x = y - x; // Subtraktion
+x = y * x; // Multiplikation
+x = y / x; // Division
+
+// Zeigt an, dass der Rest der Zeile ein Kommentar ist.
+	\end{lstlisting}
+\end{frame}
+
+
+\subsection{Strings} 
+
+\begin{frame}
+	\frametitle{Strings}
+	\begin{itemize}
+		\item Zeichenketten oder Strings genannt
+		\item Werden in " eingerahmt: \lstinline[language=java]{String name = "max";}
+		\item Können mit dem '+' / Plus Operator aneinander gehängt werden. Weitere Operatoren für Strings gibt es nicht.
+	\end{itemize}
+\end{frame}
+
+\subsection{String Code Beispiele}
+
+\begin{frame}[fragile]
+\frametitle{String Code Beispiele}
+\begin{lstlisting}[language=java]
+
+// Einen neuen String erstellen
+String name = "max"; 
+
+// String an String 'addieren'
+name = name + ":" + name; 
+
+// String in der Konsole anzeigen
+System.out.println(name);
+
+// Ausgabe von diesem Beispiel:
+max:max
+
+\end{lstlisting}
+\end{frame}
+\stepcounter{aufgabe}
+\subsection{\arabic{aufgabe}. Aufgabe}
+
+\begin{frame}[fragile]
+	\frametitle{\arabic{aufgabe}. Aufgabe}
+	\begin{itemize}
+		\item Von jedem euch bekannten Typen an Variablen mindestens eine erstellen
+		\item Mindestens jeder euch bekannte Operator einmal sinnvoll benutzt (führt z.B. ein paar Rechnungen durch)
+		\item Zu allem sinnvolle Ausgaben
+		\item Schreibt euren Code in die "Main Methode" einer neuen Java Datei und nutzt Eclipse, um den Code zu testen
+		\item Stellt Fragen!
+	\end{itemize}
+\end{frame}
+
+\section{Bedingungen}
+\begin{frame}[fragile]
+	\frametitle{Was sind Bedingungen}
+	\begin{itemize}
+		\item Programmierung wird erst dann interessant, wenn man zwischen Fällen unterscheiden kann
+		\item Verzweigungen im Code, Code wird unterteilt in die möglichen Fälle
+		\item Beispiel: Abhängig vom Geschlecht wird die Anrede zu Herr / Frau
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\subsection{if-Anweisung}
+\frametitle{Die if-Anweisung}
+\begin{lstlisting}[language=java]
+if (BEDINGUNG) {
+	// Anweisung wenn die Bedingung wahr ist	
+}
+else {
+	// !OPTIONAL! Anweisung wenn die Bedingung falsch
+}
+	\end{lstlisting}
+\end{frame}
+
+\subsection{Boolsche Ausdrücke}
+\begin{frame}[fragile]
+\frametitle{Was ist ein Boolean?}
+		
+	\begin{itemize}
+		\item Ein Boolean ist ein Datentyp
+		\item Kann nur die Werte "true" (wahr) oder "false" (falsch) enthalten
+		\item Die Bedindung in if-Anweisungen ist ein Boolean
+		\item Wenn der Boolean den Wert "true" enthält wird der Code zwischen \{\} ausgeführt
+		\item Wenn der Boolean den Wert "false" enthält wird der Code des else Blocks ausgeführt
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Übersicht Boolsche Ausdrücke}
+	Vergleiche ergeben Booleans:
+	\begin{itemize}
+		\item == gleich
+		\item != ungleich
+		\item \textgreater= größer gleich
+		\item \textless= kleiner gleich
+		\item \textless\ kleiner
+		\item \textgreater\ größer
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Kleine Übung}
+	Was für booleans ergeben diese Vergleiche?
+	\begin{itemize}
+		\item 2 == 3
+		\item 2 != 3
+		\item 2 >= 2
+		\item 2 > 2
+		\item 3 <= 1
+		\item 1 < 3
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Kleine Übung}
+	\begin{lstlisting}[language=java]
+int zahl = 42;
+
+// Was wird in der Konsole erscheinen?
+if (zahl < 50) {
+	System.out.println("if");
+}
+else {
+	System.out.println("else");
+}
+\end{lstlisting}
+\end{frame}
+
+\section{Schleifen} 
+
+\begin{frame}
+	\frametitle{Was ist eine Schleife?}
+	\begin{itemize}
+		\item Mit Schleifen kann man Code Abschnitte wiederholen
+		\item Es gibt unterschiedliche Arten von Schleifen:
+		\item for
+		\item while
+		\item do ... while
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\subsection{For Schleife}
+	\frametitle{Die For Schleife} 
+	\begin{lstlisting}[language=java]
+
+// for (STARTWERT; BEDINGUNG; SCHRITT)
+for (int i = 0; i < 10; i++) {
+  System.out.println("Hallo, " + i);
+}
+
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\subsection{While Schleife}
+\frametitle{Die While Schleife} 
+\begin{lstlisting}[language=java]
+
+int a = 0;
+int b = 2;
+// while (BEDINGUNG)
+while (a != b) {
+  System.out.println("Hallo, " + a);
+  a = a + 1;
+  /* oder kürzer: a++ */	
+}
+
+	\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\subsection{Do While Schleife}
+\frametitle{Die do While Schleife} 
+\begin{lstlisting}[language=java]
+
+int a = 2;
+int b = 2;
+// do { ... } while (BEDINGUNG);
+do {
+  System.out.println("Hallo, " + a);
+  a = a + 1;	
+} while(a != b);
+
+	\end{lstlisting}
+\end{frame}
+\stepcounter{aufgabe}
+\begin{frame}[fragile]
+\subsection{\arabic{aufgabe}. Aufgabe}
+\frametitle{\arabic{aufgabe}. Aufgabe}
+	
+\begin{lstlisting}[language=java]
+int höhe = 5;
+
+// Überlegt euch Code, der folgendes Muster ausgibt:
+x
+xx
+xxx
+xxxx
+// Es sollen so viele Zeilen ausgegeben werden, wie in der Variable "höhe" steht.
+
+	\end{lstlisting}
+\end{frame}
+\stepcounter{aufgabe}
+\begin{frame}[fragile]
+\subsection{\arabic{aufgabe}. Aufgabe}
+\frametitle{\arabic{aufgabe}. Aufgabe}
+
+\begin{lstlisting}[language=java]
+int höhe = 5;
+
+// Überlegt euch Code, der folgendes Muster ausgibt:
+x
+xx
+x
+xx
+x
+// Es sollen so viele Zeilen ausgegeben werden, wie in der Variable "höhe" steht.
+	\end{lstlisting}
+\end{frame}
+\stepcounter{aufgabe}
+\begin{frame}[fragile]
+\subsection{\arabic{aufgabe}. Aufgabe}
+\frametitle{\arabic{aufgabe}. Aufgabe}
+	
+\begin{lstlisting}[language=java]
+
+int höhe = 5;
+
+// Überlegt euch Code, der folgendes Muster ausgibt:
+   x  
+  xxx
+ xxxxx
+xxxxxxx
+ xxxxx
+  xxx
+   x
+// Es sollen so viele Zeilen ausgegeben werden, wie in der Variable "höhe" steht.
+
+
+	\end{lstlisting}
+\end{frame}
+
+\section{Fuktionen}
+\begin{frame}[fragile]
+	\frametitle{Was sind Funktionen}
+	\begin{itemize}
+		\item Wiederkehrende Aufgaben kapseln
+		\item Logische Trennung von Funktionalit\"at
+		\item Code wird \"ubersichtlicher
+		\item Funktionen haben sogenannte Parameter / R\"uckgabewerte
+	\end{itemize}
+\end{frame}
+
+\subsection{Aufrufe}
+\begin{frame}[fragile]
+\frametitle{Aufrufe}
+	
+	
+\begin{lstlisting}[language=java]
+
+// Funktion definieren
+void sageHallo(){
+	System.out.println("Hallo");	
+}
+
+// Das Wort "void" bedeutet, die Methode hat keinen Rückgabewert
+
+// Funktion aufrufen
+sageHallo();
+
+	\end{lstlisting}
+\end{frame}
+
+\subsection{Parameter}
+\begin{frame}[fragile]
+	\frametitle{Fuktionen Parameter \"ubergeben}
+	\begin{itemize}
+		\item Wiederkehrende Aufgaben unterscheiden sich
+		\item Aufruf mit Parameter: \lstinline[language=java]{meineFunktion(eineVariable);}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Ein Beispiel}
+		
+	\begin{lstlisting}[language=java]
+
+// Funktion definieren
+void sageHallo(String name){
+	System.out.println("Hallo " + name);	
+}
+
+// Funktion aufrufen
+sageHallo("max");
+
+	\end{lstlisting}
+\end{frame}
+
+\subsection{R\"uckgabe}
+\begin{frame}[fragile]
+	\frametitle{Fuktionen mit R\"uckgabe}
+	\begin{itemize}
+		\item Eine Funktion kann ein Ergebnis zur\"uckliefern
+		\item Aufruf mit R\"uckgabe: \lstinline[language=java]{int uhr = holeUhrzeit();}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Ein Beispiel}
+	\begin{lstlisting}[language=java]
+
+// Fuktion definieren
+int addiere(int x, int y){
+	return x + y;	
+}
+
+// Fuktion aufrufen
+int i = addiere(1, 2);
+
+System.out.println(i);
+
+	\end{lstlisting}
+\end{frame}
+\stepcounter{aufgabe}
+\subsection{\arabic{aufgabe}. Aufgabe}
+\begin{frame}[fragile]
+	\frametitle{\arabic{aufgabe}. Aufgabe}
+		
+	\begin{lstlisting}[language=java]
+// Schreibe eine Funktion, die je nach Geschlecht "Hallo, Herr/ Frau Name" und den Namen ausgibt.
+public void sageHallo(String name, boolean istFrau) {
+	
+}
+	\end{lstlisting}
+\end{frame}
+\stepcounter{aufgabe}
+\subsection{\arabic{aufgabe}. Aufgabe}
+\begin{frame}[fragile]
+	\frametitle{\arabic{aufgabe}. Aufgabe}
+	\begin{lstlisting}[language=java]
+// Schreibe eine Funktion die das Quadrat einer Zahl zurückgibt.
+int pow(int x, int y) {
+	return 0;
+}
+	\end{lstlisting}
+\end{frame}
+\end{document} 
